@@ -15,6 +15,7 @@ public class FileReader {
             bufReader.close();
             return collection;
         } catch (Exception e) {
+            System.out.println("Error, can't read file: " + path);
             return Collections.emptyList();
         }
     }
