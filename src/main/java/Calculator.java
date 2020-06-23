@@ -11,9 +11,10 @@ public class Calculator {
         long totalNum = Long.parseLong(splitted.get(splitted.size() - 1));
         int header = arch.equals("64") ? 8 : 4;
         int ref = totalNum > limit ? 8 : 4;
+        int sum = header + ref;
         long gain = 0L;
         for (List<String> clazz : list) {
-            gain = gain + (Long.parseLong(clazz.get(1)) * header * ref);
+            gain = gain + (Long.parseLong(clazz.get(1)) * sum);
         }
         return gain;
     }
